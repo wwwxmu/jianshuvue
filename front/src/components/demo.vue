@@ -218,7 +218,7 @@ export default {
         }]
       }
       this.baseInfoChart.setOption(option)
-      const path = `http://localhost:8080/api/base/` + this.$route.params.id
+      const path = `http://39.108.51.6:8080/api/base/` + this.$route.params.id
       axios.get(path).then(response => {
         this.image_url = response.data.img
         this.name = response.data.name
@@ -301,7 +301,7 @@ export default {
     })
   },
   created: function () {
-    axios.get('http://localhost:8080/api/article/' + this.$route.params.id).then(response => {
+    axios.get('http://39.108.51.6:8080/api/article/' + this.$route.params.id).then(response => {
       this.article_table = response.data.article
     }).catch(error => {
       console.log(error)
