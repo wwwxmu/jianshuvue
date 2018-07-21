@@ -37,10 +37,10 @@ class Dailyinfo(db.Document):
 @app.route('/api/base/<uid>')
 def base(uid):
     baseinfo = Dailyinfo.objects(uid=uid).order_by('-date').all()
-    new_follows = int(baseinfo[1]['follows']) - int(baseinfo[2]['follows'])
-    new_article = int(baseinfo[1]['article_nums']) - int(baseinfo[2]['article_nums'])
-    new_word = int(baseinfo[1]['word_nums']) - int(baseinfo[2]['word_nums'])
-    new_like = int(baseinfo[1]['like_nums']) - int(baseinfo[2]['like_nums'])
+    new_follows = int(baseinfo[0]['follows']) - int(baseinfo[1]['follows'])
+    new_article = int(baseinfo[0]['article_nums']) - int(baseinfo[1]['article_nums'])
+    new_word = int(baseinfo[0]['word_nums']) - int(baseinfo[1]['word_nums'])
+    new_like = int(baseinfo[0]['like_nums']) - int(baseinfo[1]['like_nums'])
     info = Dailyinfo.objects(uid=uid).all()
     date = []
     follows = []
@@ -58,8 +58,8 @@ def base(uid):
     follows_likes = {}
     follows_articles = {}
     follows_following = {}
-    name = info[1]['name']
-    img = info[1]['img']
+    name = info[0]['name']
+    img = info[0]['img']
     for i in info:
         date.append(i['date'])
         follows.append(i['follows'])
