@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 venv
 *.ini
 *.sock
 *.conf
 
+=======
+readme
+>>>>>>> 8ceb53df352a52edc33612a6c7c887591eccbe79
