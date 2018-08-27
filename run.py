@@ -69,14 +69,14 @@ def base(uid):
         like_nums.append(i['like_nums'])
         read_nums.append(sum([int(a['read_num']) for a in i['article_details']]))
         review_nums.append(sum([int(a['comment_num']) for a in i['article_details']]))
-        most_read[i['date']] = sorted(i['article_details'], key = lambda e:int(e.__getitem__('read_num')), reverse = True)
-        most_review[i['date']] = sorted(i['article_details'], key = lambda e:int(e.__getitem__('comment_num')), reverse = True)
-        most_like[i['date']] = sorted(i['article_details'], key = lambda e:int(e.__getitem__('heart_num')), reverse = True)
-        follows_words[i['date']] = sum([int(a['word_nums']) for a in i['follows_details']])
-        follows_follows[i['date']] = sum([int(a['follows']) for a in i['follows_details']])
-        follows_likes[i['date']] = sum([int(a['like_nums']) for a in i['follows_details']])
-        follows_articles[i['date']] = sum([int(a['article_nums']) for a in i['follows_details']])
-        follows_following[i['date']] = sum([int(a['following']) for a in i['follows_details']])
+        #most_read[i['date']] = sorted(i['article_details'], key = lambda e:int(e.__getitem__('read_num')), reverse = True)
+        #most_review[i['date']] = sorted(i['article_details'], key = lambda e:int(e.__getitem__('comment_num')), reverse = True)
+        #most_like[i['date']] = sorted(i['article_details'], key = lambda e:int(e.__getitem__('heart_num')), reverse = True)
+        #follows_words[i['date']] = sum([int(a['word_nums']) for a in i['follows_details']])
+        #follows_follows[i['date']] = sum([int(a['follows']) for a in i['follows_details']])
+        #follows_likes[i['date']] = sum([int(a['like_nums']) for a in i['follows_details']])
+        #follows_articles[i['date']] = sum([int(a['article_nums']) for a in i['follows_details']])
+        #follows_following[i['date']] = sum([int(a['following']) for a in i['follows_details']])
     res = {
         'follows':follows,
         'following': following,
@@ -85,14 +85,14 @@ def base(uid):
         'like_nums': like_nums,
         'read_nums': read_nums,
         'review_nums': review_nums,
-        'most_read': most_read,
-        'most_review': most_review,
-        'most_like': most_like,
-        'follows_words': follows_words,
-        'follows_follows': follows_follows,
-        'follows_likes': follows_likes,
-        'follows_articles': follows_articles,
-        'follows_following': follows_following,
+        #'most_read': most_read,
+        #'most_review': most_review,
+        #'most_like': most_like,
+        #'follows_words': follows_words,
+        #'follows_follows': follows_follows,
+        #'follows_likes': follows_likes,
+        #'follows_articles': follows_articles,
+        #'follows_following': follows_following,
         'date': date,
         'name': name,
         'img': img,
